@@ -16,10 +16,10 @@ if "GOOGLE_API_KEY" not in os.environ:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Initialize RAG Chain (Cached to avoid reloading on every rerun)
+# Initialize RAG Chain 
 @st.cache_resource
 def load_chain():
-    return get_rag_chain()  # Returns (chain, retriever)
+    return get_rag_chain()  
 
 try:
     qa_chain, retriever = load_chain()
